@@ -6,7 +6,7 @@ const Localidad = sequelize.define(
   'Localidad',
   {
     id: {
-      type: DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
       allowNull: false,
@@ -16,7 +16,7 @@ const Localidad = sequelize.define(
       allowNull: false,
     },
     idDepartamento: {
-      type: DataTypes.INTEGER.UNSIGNED,
+      type: DataTypes.INTEGER,
       allowNull: false,
       references: {
         model: Departamento,
