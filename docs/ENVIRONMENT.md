@@ -4,6 +4,9 @@
 
 ```plaintext
 PORT = 3000
+
+REDIS_URL = redis://localhost:6379 # Just if want to use redis
+
 DB_DIALECT = sqlite # sqlite, mysql
 
 # Para mysql
