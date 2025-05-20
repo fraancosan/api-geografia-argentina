@@ -1,4 +1,5 @@
 import { Sequelize } from 'sequelize';
+import path from 'path';
 
 const DIALECT = process.env.DB_DIALECT || 'sqlite';
 
@@ -7,7 +8,8 @@ let sequelize;
 if (DIALECT === 'sqlite') {
   sequelize = new Sequelize({
     dialect: 'sqlite',
-    storage: '../database/SQLite3.db',
+    storage: path.join('database', 'SQLite3.db'),
+    logging: false,
   });
 } else {
   sequelize = new Sequelize(
