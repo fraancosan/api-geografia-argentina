@@ -1,21 +1,25 @@
 {
-  "name": "express.js-template",
+  "name": "api-geografia-argentina",
   "version": "1.0.0",
   "main": "index.js",
   "type": "module",
   "scripts": {
     "start": "node index.js",
     "dev": "set NODE_ENV=development&& nodemon -L index.js",
-    "prod": "set NODE_ENV=production&& node index.js"
+    "prod": "set NODE_ENV=production&& node index.js",
+    "format": "prettier --write ."
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/fraancosan/express.js-template.git"
+    "url": "https://github.com/fraancosan/api-geografia-argentina.git"
   },
   "author": "Franco Sanchez",
-  "license": "ISC",
-  "description": "This is a template for creating an Express.js application. It includes a basic structure and configuration to get you started quickly.",
-  "homepage": "https://github.com/fraancosan/express.js-template#readme",
+  "license": "MIT",
+  "description": "This is a project that provides an API for geographical data of Argentina. It includes information about provinces, cities, and other geographical features.",
+  "homepage": "https://github.com/fraancosan/api-geografia-argentina#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",

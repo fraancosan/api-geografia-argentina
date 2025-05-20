@@ -1,5 +1,7 @@
 # API Geografia Argentina
-
+![MIT License](https://img.shields.io/badge/license-MIT-green)
+![Node.js](https://img.shields.io/badge/Node.js-22.x-blue)
+![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen)
 ## Descripción
 
 API RESTful que permite obtener información geográfica de Argentina, incluyendo provincias, departamentos y localidades. La API está diseñada para ser utilizada por desarrolladores que necesiten acceder a datos geográficos de Argentina de manera sencilla y eficiente. Cuenta con una serie de endpoints que permiten realizar búsquedas y obtener información detallada sobre cada entidad geográfica.
