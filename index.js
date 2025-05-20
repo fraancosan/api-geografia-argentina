@@ -1,5 +1,6 @@
 import express, { json } from 'express';
 import { corsMiddleware } from './middlewares/cors.js';
+import dotenv from 'dotenv';
 
 const app = express();
 
@@ -7,6 +8,10 @@ const app = express();
 app.disable('x-powered-by');
 app.use(json());
 app.use(corsMiddleware);
+
+// environment variables
+const env = process.env.NODE_ENV ?? 'development';
+dotenv.config(env === 'production' ? { path: '.env' } : { path: '.env.dev' });
 
 const port = process.env.PORT ?? 3000;
 
