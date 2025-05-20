@@ -19,11 +19,6 @@ app.get('/', (req, res) => {
   res.status(400).send('Nothing to see here');
 });
 
-app.use(
-  '/img',
-  express.static(path.resolve(path.join('src', 'public', 'img'))),
-);
-
 app.use('/health', (req, res) => {
   res.status(200).send('OK');
 });
