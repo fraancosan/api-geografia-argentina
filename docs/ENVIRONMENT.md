@@ -5,9 +5,9 @@
 ```plaintext
 PORT = 3000
 
-REDIS_URL = redis://localhost:6379 # Just if want to use redis
+REDIS_URL = redis://localhost:6379 # Solo si querés usar redis
 
-DB_DIALECT = sqlite # sqlite, mysql
+DB_DIALECT = sqlite # sqlite / mysql
 
 # Para mysql
 # DB_HOST = localhost
@@ -20,11 +20,11 @@ DB_DIALECT = sqlite # sqlite, mysql
 ```
 
 > [!NOTE]
-> Podes usar una base de datos sqlite o mysql. Si usas sqlite, no es necesario que asignes las variables de entorno para mysql.
+> Podés usar una base de datos sqlite o mysql. Si usás sqlite, no es necesario que asignes las variables de entorno para mysql.
 >
-> Si queres usar mysql, [aca tenes un backup para que lo implementes en la base de datos que desees](../database/mysqlScript.sql)
+> Si querés usar mysql, [acá tenés un backup para que lo implementes en la base de datos que desees](../database/mysqlScript.sql).
 >
-> Si deseas usar redis para cachear las peticiones, puedes asignar la variable de entorno `REDIS_URL` con la url de tu servidor redis. Si no deseas usar redis, no es necesario que asignes esta variable.
+> Si deseás usar redis para cachear las peticiones, podés asignar la variable de entorno `REDIS_URL` con la URL de tu servidor redis. Si no querés usar redis, no es necesario que asignes esta variable.
 
 > [!CAUTION]
-> Si asignas variables de entorno para mysql, primero debes establecer la variable de entorno `DB_DIALECT` a `mysql`. De lo contrario, se usara sqlite como base de datos por defecto.
+> Si asignás variables de entorno para mysql, primero debés establecer la variable de entorno `DB_DIALECT` en `mysql`. De lo contrario, se usará sqlite como base de datos por defecto.
