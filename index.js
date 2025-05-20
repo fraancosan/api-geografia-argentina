@@ -1,6 +1,9 @@
 import express, { json } from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { localidadesRouter } from './routes/localidades.js';
+import { provinciasRouter } from './routes/provincias.js';
+import { departamentosRouter } from './routes/departamentos.js';
 
 const app = express();
 
@@ -22,6 +25,11 @@ app.get('/', (req, res) => {
 app.use('/health', (req, res) => {
   res.status(200).send('OK');
 });
+
+// Routes
+app.use('/provincias', provinciasRouter);
+app.use('/departamentos', departamentosRouter);
+app.use('/localidades', localidadesRouter);
 
 // 404 handler
 app.use((req, res, next) => {
