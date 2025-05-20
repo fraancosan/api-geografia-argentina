@@ -82,3 +82,18 @@ Para implementar la API en tu proyecto, puedes seguir estos pasos:
 ## ¿Cuáles son las variables de entorno necesarias?
 
 Podés ver la documentación relacionada [acá](./docs/ENVIRONMENT.md)
+
+## Licencia
+
+Este proyecto está licenciado bajo la licencia MIT.  
+Podés ver el archivo [LICENSE](./LICENSE) para más detalles.
+
+## Contribuciones
+
+¡Las contribuciones son bienvenidas!  
+Si querés aportar, por favor hacé un fork del repositorio y creá un pull request.  
+Todas las propuestas serán revisadas y aceptadas si cumplen con los lineamientos del proyecto.
+
+Para cualquier cambio importante, abrí primero una issue para discutir lo que te gustaría modificar.
+
+---
