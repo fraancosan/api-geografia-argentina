@@ -18,6 +18,21 @@ Si en lugar de SQLite3 preferís usar MySQL, más abajo hay una sección que exp
 
 ## Endpoints
 
+> [!NOTE]
+> Los endpoints `GET /departamentos/{id}` y `GET /localidades/{id}` devuelven, además de la información principal, la entidad vinculada correspondiente:
+>
+> - `/departamentos/{id}` incluye la provincia asociada.
+> - `/localidades/{id}` incluye el departamento y la provincia asociada.
+>
+> El endpoint `GET /provincias/{id}` admite parámetros opcionales:
+>
+> - `?departamentos=y` devuelve una lista de departamentos asociados a la provincia.
+> - `?localidades=y` devuelve una lista de departamentos junto a sus localidades asociadas a la provincia.
+>
+> El endpoint `GET /departamentos/{id}` admite el parámetro opcional:
+>
+> - `?localidades=y` devuelve una lista de localidades asociadas al departamento.
+
 ### Provincias
 
 - **GET /provincias**: Devuelve una lista de todas las provincias de Argentina.
@@ -28,14 +43,14 @@ Si en lugar de SQLite3 preferís usar MySQL, más abajo hay una sección que exp
 ### Departamentos
 
 - **GET /departamentos**: Devuelve una lista de todos los departamentos de Argentina.
-- **GET /departamentos/{id}**: Devuelve información detallada sobre un departamento específico.
+- **GET /departamentos/{id}**: Devuelve información detallada sobre un departamento específico, junto a su provincia correspondiente.
 - **GET /departamentos/search/{nombre}**: Busca departamentos que coincidan con el nombre exacto.
 - **GET /departamentos/searchLike/{nombre}**: Busca departamentos que contengan el nombre proporcionado.
 
 ### Localidades
 
 - **GET /localidades**: Devuelve una lista de todas las localidades de Argentina.
-- **GET /localidades/{id}**: Devuelve información detallada sobre una localidad específica.
+- **GET /localidades/{id}**: Devuelve información detallada sobre una localidad específica, junto a su departamento y provincia correspondiente.
 - **GET /localidades/search/{nombre}**: Busca localidades que coincidan con el nombre exacto.
 - **GET /localidades/searchLike/{nombre}**: Busca localidades que contengan el nombre proporcionado.
 

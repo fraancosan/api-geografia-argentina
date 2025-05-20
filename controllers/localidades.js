@@ -51,7 +51,10 @@ export class localidadesController {
   static async getById(req, res) {
     try {
       const { id } = req.params;
-      const localidad = await Localidad.findByPk(id);
+      const include = [{ association: 'departamento', include: ['provincia'] }];
+      const localidad = await Localidad.findByPk(id, {
+        include,
+      });
       localidad
         ? res.status(200).json(localidad)
         : res.status(404).json({ message: 'Localidad no encontrada' });

@@ -54,7 +54,14 @@ export class departamentosController {
   static async getById(req, res) {
     try {
       const { id } = req.params;
-      const departamento = await Departamento.findByPk(id);
+      const { localidades } = req.query;
+      const include = ['provincia'];
+      if (localidades === 'y') {
+        include.push('localidades');
+      }
+      const departamento = await Departamento.findByPk(id, {
+        include,
+      });
       departamento
         ? res.status(200).json(departamento)
         : res.status(404).json({ message: 'Departamento no encontrado' });

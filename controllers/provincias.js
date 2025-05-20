@@ -52,7 +52,19 @@ export class provinciasController {
   static async getById(req, res) {
     try {
       const { id } = req.params;
-      const provincia = await Provincia.findByPk(id);
+      const { departamentos, localidades } = req.query;
+      const include = [];
+      if (departamentos === 'y' && localidades !== 'y') {
+        include.push('departamentos');
+      } else if (localidades === 'y') {
+        include.push({
+          association: 'departamentos',
+          include: ['localidades'],
+        });
+      }
+      const provincia = await Provincia.findByPk(id, {
+        include,
+      });
       provincia
         ? res.status(200).json(provincia)
         : res.status(404).json({ message: 'Provincia no encontrada' });
