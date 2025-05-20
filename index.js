@@ -1,13 +1,16 @@
 import express, { json } from 'express';
-import { corsMiddleware } from './middlewares/cors.js';
+import cors from 'cors';
 import dotenv from 'dotenv';
+import { localidadesRouter } from './routes/localidades.js';
+import { provinciasRouter } from './routes/provincias.js';
+import { departamentosRouter } from './routes/departamentos.js';
 
 const app = express();
 
 // Initial configuration
 app.disable('x-powered-by');
 app.use(json());
-app.use(corsMiddleware);
+app.use(cors());
 
 // environment variables
 const env = process.env.NODE_ENV ?? 'development';
@@ -19,14 +22,14 @@ app.get('/', (req, res) => {
   res.status(400).send('Nothing to see here');
 });
 
-app.use(
-  '/img',
-  express.static(path.resolve(path.join('src', 'public', 'img'))),
-);
-
 app.use('/health', (req, res) => {
   res.status(200).send('OK');
 });
+
+// Routes
+app.use('/provincias', provinciasRouter);
+app.use('/departamentos', departamentosRouter);
+app.use('/localidades', localidadesRouter);
 
 // 404 handler
 app.use((req, res, next) => {
