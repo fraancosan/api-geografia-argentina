@@ -1,5 +1,8 @@
 import { Sequelize } from 'sequelize';
 import path from 'path';
+import dotenv from 'dotenv';
+const env = process.env.NODE_ENV ?? 'development';
+dotenv.config(env === 'production' ? { path: '.env' } : { path: '.env.dev' });
 
 const DIALECT = process.env.DB_DIALECT || 'sqlite';
 
@@ -11,6 +14,7 @@ if (DIALECT === 'sqlite') {
     storage: path.join('database', 'SQLite3.db'),
     logging: false,
   });
+  console.log('SQLite3 database connected\n');
 } else {
   sequelize = new Sequelize(
     process.env.DB_NAME,
@@ -23,6 +27,7 @@ if (DIALECT === 'sqlite') {
       logging: false,
     },
   );
+  console.log('MySQL database connected\n');
 }
 
 export default sequelize;
